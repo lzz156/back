@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 @SpringBootApplication(scanBasePackages = "com.lzz.back")
 @EnableMPP
 
+
+
 public class BackApplication {
 
     public static void main(String[] args) {
