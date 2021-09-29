@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface CourseService
+interface CourseMapper
+
+CourseService  <|.. CourseServiceImpl
+CourseService <-- CourseController
+CourseMapper <-- CourseServiceImpl
+
+class CourseServiceImpl{
+CourseMapper courseMapper
+UserMapper userMapper
+SchoolMapper schoolMapper
+ChooseCourseMapper chooseCourseMapper
+TermMapper termMapper
+getThisCourses()
+getChooseCourseResult()
+insertChooseCourse()
+getHistoryCourses()
+
+}
+
+entity Course {
+Integer courseId
+String courseCode
+String courseName
+...
+}
+class CourseController {
+CourseService courseService
+UserService userService
+getThisCourses()
+getChooseCourseResult()
+deleteChooseCourse()
+chooseCourse()
+getHistoryCourses()
+getThisStartCourses()
+showStudentList()
+}
+
+
+@enduml
